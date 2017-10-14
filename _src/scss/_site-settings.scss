@@ -1,0 +1,63 @@
+@charset "UTF-8";
+
+// ----------------------
+// == Site settings
+// ----------------------
+
+// Fonts
+$font1: "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font2: Georgia, serif;
+
+// = Colors
+// -----------------------------
+
+// Graphic chart
+$red: #df2e30;
+$blue: #1894c4;
+$facebook: #3b5998;
+$twitter: #43bfe1;
+
+$color1: $red;
+$color2: $blue;
+
+
+// = Grid
+// -----------------------------
+
+// Max width wrapper
+$wrapper-width: pxtoem(1140, 16);
+
+//= Mixins - Media Query
+//-----------------------------
+$bp-1: rem(450);
+$bp-2: rem(768);
+$bp-3: rem(970);
+$bp-4: rem(1170);
+
+@mixin screen-xs {
+
+	@media (min-width: $bp-1) {
+		@content;
+	}
+}
+
+@mixin screen-sm {
+
+	@media (min-width: $bp-2) {
+		@content;
+	}
+}
+
+@mixin screen-md {
+  
+  @media (min-width: $bp-3) {
+    @content;
+  }
+}
+
+@mixin screen-lg {
+  
+  @media (min-width: $bp-4) {
+    @content;
+  }
+}

@@ -1,0 +1,15 @@
+/* ===========================
+   Base
+   =========================== */
+body {
+
+	// Remove Greeting. Welcome!
+	&:before {
+		content: "Welcome to SASS Quickstart!";
+		display: block;
+		font-size: rem(30);
+		margin-top: 25%;
+		text-align: center;
+		width: 100%;
+	}
+}
