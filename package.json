@@ -17,6 +17,7 @@
   "author": "Mike Boardley",
   "license": "ISC",
   "devDependencies": {
+    "bootstrap-sass": "^3.3.7",
     "bourbon": "^4.3.4",
     "browser-sync": "^2.18.13",
     "gulp": "^3.9.1",
