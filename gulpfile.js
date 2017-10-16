@@ -50,7 +50,7 @@ gulp.task('build:css', function () {
 	.pipe(plumber(plumberErrorHandler))
   .pipe(sourcemaps.init())
   .pipe(sass({
-      includePaths: [].concat(bourbon.includePaths),
+      includePaths: ['node_modules/font-awesome/scss'].concat(bourbon.includePaths),
   }))
   .pipe(cleanCSS({
   	level: 2
@@ -62,9 +62,7 @@ gulp.task('build:css', function () {
 
 gulp.task('copy:assets', function() {
   //Copy Fonts
-	gulp.src('./node_modules/bootstrap-sass/assets/fonts/**/*.{ttf,woff,woff2,eof,svg}')
-  .pipe(gulp.dest('./fonts'));
-	gulp.src('node_modules/bootstrap-sass/assets/fonts/**/*.{ttf,woff,woff2,eof,svg}')
+	gulp.src('node_modules/font-awesome/fonts/**/*.{ttf,woff,woff2,eof,svg}')
   .pipe(gulp.dest('./fonts'));
 
 	//Copy Javascript

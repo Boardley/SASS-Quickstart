@@ -23,6 +23,7 @@
   "devDependencies": {
     "bourbon": "^4.3.4",
     "browser-sync": "^2.18.13",
+    "font-awesome": "^4.7.0",
     "gulp": "^3.9.1",
     "gulp-clean-css": "^2.4.0",
     "gulp-concat": "^2.6.1",

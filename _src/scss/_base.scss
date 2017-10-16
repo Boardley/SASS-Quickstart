@@ -7,6 +7,7 @@ body {
 	&:before {
 		content: "Welcome to SASS Quickstart!";
 		display: block;
+		font-family: "fontAwesome";
 		font-size: rem(30);
 		margin-top: 25%;
 		text-align: center;
