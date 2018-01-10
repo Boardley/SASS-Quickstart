@@ -62,17 +62,15 @@ gulp.task('build:css', function () {
 
 gulp.task('copy:assets', function() {
   //Copy Fonts
-	gulp.src('./node_modules/bootstrap-sass/assets/fonts/**/*.{ttf,woff,woff2,eof,svg}')
-  .pipe(gulp.dest('./fonts'));
-	gulp.src('node_modules/font-awesome/fonts/**/*.{ttf,woff,woff2,eof,svg}')
-  .pipe(gulp.dest('./fonts'));
-  gulp.src('node_modules/slick-carousel/slick/fonts/**/*.{ttf,woff,woff2,eof,svg}')
+	gulp.src(['./node_modules/bootstrap-sass/assets/fonts/**/*.{ttf,woff,woff2,eof,svg}',
+    'node_modules/font-awesome/fonts/**/*.{ttf,woff,woff2,eof,svg}',
+    'node_modules/slick-carousel/slick/fonts/**/*.{ttf,woff,woff2,eof,svg}'])
   .pipe(gulp.dest('./fonts'));
 
 	//Copy Javascript
-	gulp.src([
-		'node_modules/bootstrap-sass/assets/javascripts/bootstrap.js',
-		'node_modules/jquery/dist/jquery.js'])
+	gulp.src(['node_modules/bootstrap-sass/assets/javascripts/bootstrap.js',
+		'node_modules/jquery/dist/jquery.js',
+    'node_modules/slick-carousel/slick/slick.js'])
     .pipe(gulp.dest('./_src/js/vendor'));
 });
 
@@ -80,7 +78,6 @@ gulp.task('copy:assets', function() {
 gulp.task('build:images', function() {
  
   gulp.src('./_src/images/*.{png,jpg,gif}')
- 
     .pipe(imagemin({
       optimizationLevel: 7,
       progressive: true
@@ -92,6 +89,7 @@ gulp.task('build:images', function() {
 gulp.task('build:scripts', function() {
   let jsfiles = [
   	'./_src/js/vendor/jquery.js',
+    './_src/js/vendor/slick.js',
   	'./_src/js/vendor/bootstrap.js',
   	'./_src/js/**/*.js',
   	'./_src/js/*.js'
