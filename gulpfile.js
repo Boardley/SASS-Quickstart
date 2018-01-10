@@ -62,19 +62,15 @@ gulp.task('build:css', function () {
 
 gulp.task('copy:assets', function() {
   //Copy Fonts
-	 gulp.src('node_modules/font-awesome/fonts/**/*.{ttf,woff,woff2,eof,svg}')
-  .pipe(gulp.dest('./fonts'));
-  gulp.src('node_modules/slick-carousel/slick/fonts/**/*.{ttf,woff,woff2,eof,svg}')
+	 gulp.src(['node_modules/font-awesome/fonts/**/*.{ttf,woff,woff2,eof,svg}',
+    'node_modules/slick-carousel/slick/fonts/**/*.{ttf,woff,woff2,eof,svg}'])
   .pipe(gulp.dest('./fonts'));
 
 	//Copy Javascript
 	gulp.src([
-		'node_modules/jquery/dist/jquery.js'])
+		'node_modules/jquery/dist/jquery.js',
+    'node_modules/slick-carousel/slick/slick.js'])
     .pipe(gulp.dest('./_src/js/vendor'));
-
-  gulp.src([
-  'node_modules/slick-carousel/slick/slick.js'])
-  .pipe(gulp.dest('./_src/js/vendor'));
 });
 
 // Image Optimization
