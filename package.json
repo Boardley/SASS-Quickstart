@@ -39,6 +39,7 @@
     "gulp-util": "^3.0.8",
     "jquery": "^3.2.1",
     "jshint": "^2.9.5",
+    "slick-carousel": "^1.8.1",
     "streamqueue": "^1.1.2"
   }
 }
