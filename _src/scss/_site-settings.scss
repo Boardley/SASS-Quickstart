@@ -16,7 +16,7 @@ $red: #df2e30;
 $blue: #1894c4;
 $facebook: #3b5998;
 $twitter: #43bfe1;
-
+$basic: #fff;
 $color1: $red;
 $color2: $blue;
 
@@ -29,10 +29,10 @@ $wrapper-width: pxtoem(1140, 16);
 
 //= Mixins - Media Query
 //-----------------------------
-$bp-1: rem(450);
-$bp-2: rem(768);
-$bp-3: rem(970);
-$bp-4: rem(1170);
+$bp-1: 450px;
+$bp-2: 768px;
+$bp-3: 970px;
+$bp-4: 1170px;
 
 @mixin screen-xs {
 
