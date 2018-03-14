@@ -37,8 +37,8 @@ gulp.task('browser-sync', function() {
   browserSync.init(files, {
  		//browsersync with a php server
  		// You need to change the proxy to whatever your URL for your local install is.
-    //proxy: "http://localhost/~boardley/alpha/",
-   	server: true,
+    proxy: "http://localhost/~boardley/carm/",
+   	//server: true,
     notify: false
   });
 });
@@ -50,25 +50,24 @@ gulp.task('build:css', function () {
 	.pipe(plumber(plumberErrorHandler))
   .pipe(sourcemaps.init())
   .pipe(sass({
-    includePaths: ['node_modules/bootstrap-sass/assets/stylesheets','node_modules/font-awesome/scss','node_modules/slick-carousel/slick/'].concat(bourbon.includePaths),
+    includePaths: ['node_modules/bootstrap/scss','node_modules/font-awesome/scss','node_modules/slick-carousel/slick/'].concat(bourbon.includePaths),
   }))
   .pipe(cleanCSS({
   	level: 2
 	}))
   .pipe(sourcemaps.write('maps'))
-  .pipe(gulp.dest('./css'))
+  .pipe(gulp.dest('./'))
   .pipe(reload({stream:true}));
 });
 
 gulp.task('copy:assets', function() {
   //Copy Fonts
-	gulp.src(['./node_modules/bootstrap-sass/assets/fonts/**/*.{ttf,woff,woff2,eof,svg}',
-    'node_modules/font-awesome/fonts/**/*.{ttf,woff,woff2,eof,svg}',
+	gulp.src(['node_modules/font-awesome/fonts/**/*.{ttf,woff,woff2,eof,svg}',
     'node_modules/slick-carousel/slick/fonts/**/*.{ttf,woff,woff2,eof,svg}'])
   .pipe(gulp.dest('./fonts'));
 
 	//Copy Javascript
-	gulp.src(['node_modules/bootstrap-sass/assets/javascripts/bootstrap.js',
+	gulp.src(['node_modules/bootstrap/dist/js/bootstrap.js',
 		'node_modules/jquery/dist/jquery.js',
     'node_modules/slick-carousel/slick/slick.js'])
     .pipe(gulp.dest('./_src/js/vendor'));
