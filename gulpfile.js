@@ -27,7 +27,7 @@ let plumberErrorHandler = { errorHandler: notify.onError({
 gulp.task('browser-sync', function() {
     //watch files
 	let files = [
-	'./style.css',
+	'./css/style.css',
 	'./js/*.js',
 	'./**/*.html',
 	'./**/*.twig'
@@ -37,8 +37,8 @@ gulp.task('browser-sync', function() {
   browserSync.init(files, {
  		//browsersync with a php server
  		// You need to change the proxy to whatever your URL for your local install is.
-    proxy: "http://localhost/~boardley/carm/",
-   	//server: true,
+    //proxy: "http://localhost/",
+   	server: true,
     notify: false
   });
 });
@@ -56,7 +56,7 @@ gulp.task('build:css', function () {
   	level: 2
 	}))
   .pipe(sourcemaps.write('maps'))
-  .pipe(gulp.dest('./'))
+  .pipe(gulp.dest('./css'))
   .pipe(reload({stream:true}));
 });
 

@@ -1,15 +1,19 @@
 /* ===========================
    Base
    =========================== */
+html, body {
+	font-size: 62.5%;
+}
 body {
 
 	// Remove Greeting. Welcome!
 	&:before {
-		content: "Welcome to Bootstrap Quickstart!";
-		display: block;
-		font-size: rem(30);
+		content: "Welcome to Bootstrap 4 Quickstart!";
+		display: flex;
+		font-size: 3rem;
+		height: 100vh;
+		justify-content: center;
 		margin-top: 25%;
-		text-align: center;
 		width: 100%;
 	}
 }
