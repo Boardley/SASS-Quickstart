@@ -2,13 +2,18 @@
    Base
    =========================== */
 
+html, body {
+	font-size: 62.5%;
+}
+
 body {
 	background-color: $red;
 	color: $basic;
+
 	transition: all .2s ease-in-out;
 
 	// These are mixins for Media Queries. //
-	@include screen-md {
+	@include screen-sm {
 		background-color: $facebook;
 		color: rgba($basic, .9);
 	}
@@ -24,7 +29,7 @@ body {
 		content: "Welcome to SASS Quickstart!";
 		display: flex;
 		font-family: $font1;
-		font-size: 1.5rem;
+		font-size: 3rem;
 		justify-content: center;
 		height: 100vh;
 		text-align: center;
@@ -32,15 +37,15 @@ body {
 		width: 100%;
 
 		@include screen-sm {
-			font-size: 2.5rem;
+			font-size: 4rem;
 		}
 
 		@include screen-md {
-			font-size: 3rem;
+			font-size: 5rem;
 		}
 
 		@include screen-lg {
-			font-size: 4rem;
+			font-size: 6rem;
 		}
 	}
 }
