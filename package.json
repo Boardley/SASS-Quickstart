@@ -23,12 +23,13 @@
   "devDependencies": {
     "bootstrap": "^4.0.0",
     "bourbon": "^5.0.0",
-    "browser-sync": "^2.24.5",
+    "browser-sync": "^2.26.0",
     "font-awesome": "^4.7.0",
     "gulp": "^3.9.1",
     "gulp-clean-css": "^3.9.3",
     "gulp-concat": "^2.6.1",
     "gulp-imagemin": "^4.1.0",
+    "gulp-install": "^1.1.0",
     "gulp-jsbeautifier": "^2.1.2",
     "gulp-jshint": "^2.1.0",
     "gulp-notify": "^3.2.0",
@@ -39,9 +40,12 @@
     "gulp-uglify": "^3.0.0",
     "gulp-util": "^3.0.8",
     "jquery": "^3.3.1",
-    "jshint": "^2.9.5",
+    "jshint": "^2.9.6",
     "popper.js": "^1.12.9",
     "slick-carousel": "^1.8.1",
     "streamqueue": "^1.1.2"
+  },
+  "dependencies": {
+    "bootstrap-material-design": "^4.1.1"
   }
 }

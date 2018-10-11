@@ -1,5 +1,5 @@
 // Packages need to be required here
-let bourbon 		= require('bourbon'),
+const bourbon 		= require('bourbon'),
 		browserSync = require('browser-sync'),
 		cleanCSS 		= require('gulp-clean-css'),
 		concat 			= require('gulp-concat'),
@@ -17,7 +17,7 @@ let bourbon 		= require('bourbon'),
 		streamqueue = require('streamqueue'),
 		uglify 			= require('gulp-uglify');
 
-let plumberErrorHandler = { errorHandler: notify.onError({
+const plumberErrorHandler = { errorHandler: notify.onError({
     
     title: 'Gulp',
     message: 'Error: <%= error.message %>'
@@ -26,7 +26,7 @@ let plumberErrorHandler = { errorHandler: notify.onError({
 
 gulp.task('browser-sync', function() {
     //watch files
-	let files = [
+	const files = [
 	'./css/style.css',
 	'./js/*.js',
 	'./**/*.html',
@@ -50,7 +50,12 @@ gulp.task('build:css', function () {
 	.pipe(plumber(plumberErrorHandler))
   .pipe(sourcemaps.init())
   .pipe(sass({
-    includePaths: ['node_modules/bootstrap/scss','node_modules/font-awesome/scss','node_modules/slick-carousel/slick/'].concat(bourbon.includePaths),
+		includePaths: [
+			'./node_modules/bootstrap/scss',
+			'./node_modules/bootstrap-material-design/scss',
+			'node_modules/font-awesome/scss',
+			'node_modules/slick-carousel/slick/'
+		].concat(bourbon.includePaths),
   }))
   .pipe(cleanCSS({
   	level: 2
@@ -67,7 +72,9 @@ gulp.task('copy:assets', function() {
   .pipe(gulp.dest('./fonts'));
 
 	//Copy Javascript
-	gulp.src(['node_modules/bootstrap/dist/js/bootstrap.js',
+	gulp.src([
+		'node_modules/bootstrap/dist/js/bootstrap.js',
+		'node_modules/bootstrap-material-design/dist/js/bootstrap-material-design.js',
 		'node_modules/jquery/dist/jquery.js',
     'node_modules/slick-carousel/slick/slick.js'])
     .pipe(gulp.dest('./_src/js/vendor'));
@@ -86,10 +93,11 @@ gulp.task('build:images', function() {
 
 // Build Scripts
 gulp.task('build:scripts', function() {
-  let jsfiles = [
+  const jsfiles = [
   	'./_src/js/vendor/jquery.js',
-    './_src/js/vendor/slick.js',
-  	'./_src/js/vendor/bootstrap.js',
+		'./_src/js/vendor/slick.js',
+		'./_src/js/vendor/bootstrap.js',
+  	'./_src/js/vendor/bootstrap-material-design.js',
   	'./_src/js/**/*.js',
   	'./_src/js/*.js'
   ];
@@ -101,7 +109,7 @@ gulp.task('build:scripts', function() {
     .on('error', gutil.log);
 });
 
-let servedep = [
+const servedep = [
 	'browser-sync',
   'build:scripts',
   'build:css',
@@ -120,9 +128,8 @@ gulp.task('serve', servedep, function() {
 
 // Default - Initial Build
 
-let defaultTasks = [
+const defaultTasks = [
 	'build:css',
-	'build:images',
 	'build:scripts',
 	'copy:assets'
 ]
