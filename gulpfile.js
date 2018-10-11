@@ -63,7 +63,6 @@ gulp.task('build:css', function () {
   .pipe(sourcemaps.init())
   .pipe(sass({
 		includePaths: [
-			'./node_modules/bootstrap/scss',
 			'./node_modules/bootstrap-material-design/scss',
 			'node_modules/font-awesome/scss',
 			'node_modules/slick-carousel/slick/'
@@ -85,9 +84,9 @@ gulp.task('copy:assets', function() {
 
 	//Copy Javascript
 	gulp.src([
-		'node_modules/bootstrap/dist/js/bootstrap.js',
 		'node_modules/bootstrap-material-design/dist/js/bootstrap-material-design.js',
 		'node_modules/jquery/dist/jquery.js',
+		'node_modules/popper.js/dist/umd/popper.js',
     'node_modules/slick-carousel/slick/slick.js'])
     .pipe(gulp.dest('./_src/js/vendor'));
 });
@@ -106,10 +105,11 @@ gulp.task('build:images', function() {
 // Build Scripts
 gulp.task('build:scripts', function() {
   const jsfiles = [
-  	'./_src/js/vendor/jquery.js',
+		'./_src/js/vendor/jquery.js',
+		'./_src/js/vendor/popper.js',
 		'./_src/js/vendor/slick.js',
-		'./_src/js/vendor/bootstrap.js',
   	'./_src/js/vendor/bootstrap-material-design.js',
+    './_src/js/material-kit.js',
   	'./_src/js/**/*.js',
   	'./_src/js/*.js'
   ];
