@@ -24,6 +24,18 @@ const plumberErrorHandler = { errorHandler: notify.onError({
   })
 };
 
+
+// const Paths = {
+// 	HERE:   './',
+// 	DIST:   'dist/',
+// 	CSS:    './assets/css/',
+// 	FONTS:  './assets/fonts/',
+// 	JS:     './assets/js/',
+// 	JS_PLUGINS:     './assets/js/plugins/',
+// 	SCSS_TOOLKIT_SOURCES: './assets/scss/material-kit.scss',
+// 	SCSS: './assets/scss/**/**'
+// };
+
 gulp.task('browser-sync', function() {
     //watch files
 	const files = [
