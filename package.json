@@ -22,7 +22,7 @@
   "license": "ISC",
   "devDependencies": {
     "bourbon": "^5.0.1",
-    "browser-sync": "^2.24.7",
+    "browser-sync": "^2.26.7",
     "font-awesome": "^4.7.0",
     "gulp": "^3.9.1",
     "gulp-clean-css": "^3.9.2",
@@ -37,7 +37,7 @@
     "gulp-sourcemaps": "^2.6.3",
     "gulp-uglify": "^3.0.0",
     "gulp-util": "^3.0.8",
-    "jquery": "^3.2.1",
+    "jquery": "^3.4.1",
     "jshint": "^2.9.6",
     "slick-carousel": "^1.8.1",
     "streamqueue": "^1.1.2"
