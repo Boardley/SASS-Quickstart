@@ -22,7 +22,7 @@
   "license": "ISC",
   "devDependencies": {
     "bourbon": "^5.0.1",
-    "browser-sync": "^2.26.7",
+    "browser-sync": "^2.27.10",
     "font-awesome": "^4.7.0",
     "gulp": "^3.9.1",
     "gulp-clean-css": "^3.9.2",
